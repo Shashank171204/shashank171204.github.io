@@ -13,17 +13,15 @@
         let b=document.body;
         let down=0;
         let right=0;
-        let left=0;
-        let up=0;
         b.onkeydown=(e)=>{
             if(e.key=="ArrowRight") right+=5;
+            if(e.key=="ArrowLeft") right-=5;
             if(e.key=="ArrowDown") down+=5;
-            if(e.key=="ArrowLeft") left+=5;
-            if(e.key=="ArrowUp") up+=5;
+            if(e.key=="ArrowUp") down-=5
             ball.style.left=right+"px";
+            ball.style.right=right+"px";
             ball.style.top=down+"px";
-            ball.style.right=left+"px";
-            ball.style.bottom=up+"px";
+            ball.style.bottom=down+"px";
         };
     </script>
 </body>
