@@ -92,6 +92,30 @@
             cursor:pointer;
             text-decoration: none;
         }
+        .button{
+            justify-content: space-between;
+        }
+        .button button{
+            font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 126%;
+            letter-spacing: 1px;
+            background-color: blue;
+            border-radius: 6px;
+            color:#fff;
+            height:36px;
+            padding:0 32px;
+            min-width:194px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-color: blue;
+        }
+        .button button:hover{
+            background-color: #fff;
+            color:blue;
+        }
         #email{
             padding: 11px;
             line-height: 16px;
@@ -178,6 +202,7 @@
                 <p>Gender: ${g}</p>
                 <p>E-mail: ${email}</p>
                 <p>Password: ${password}</p>
+                <p class="button"><button>Confirm</button>&nbsp;&nbsp;&nbsp;<button on click="func1()">Edit</button></p>
             </div>
             `;
             wrapper.innerHTML = str;
