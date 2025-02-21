@@ -125,6 +125,7 @@
             padding: 11px;
             line-height: 16px;
             width:375px;
+            appearance: none;
         }
         .row {
             display: flex;
@@ -202,7 +203,7 @@
                 <p>Gender: ${g}</p>
                 <p>E-mail: ${email}</p>
                 <p>Password: ${password}</p>
-                <p class="button"><button>Confirm</button>&nbsp;&nbsp;&nbsp;<button on click="func1()">Edit</button></p>
+                <p class="button"><button>Confirm</button>&nbsp;&nbsp;&nbsp;<button onclick="location.reload()">Edit</button></p>
             </div>
             `;
             wrapper.innerHTML = str;
@@ -220,7 +221,7 @@
 </head>
 <body>
     <div align="center" class="container">
-        <img src="" alt="" width="300"/>
+        <img src="assests/images/facebook.svg" alt="" width="300"/>
     </div>
     <div align="center" class="container1">
         <div class="wrapper">
@@ -271,6 +272,21 @@
                         <input type="radio" name="gender" id="gender" onclick="togglepronoun()"/>
                     </div>
                 </div>
+                <p class="text1" style="bottom: 4px;">Hobbies</p>
+                <div class="row">
+                    <div class="radioClass">
+                        <label> Movies</label>
+                        <input type="checkbox" name="hobbies" id="hobbies"/>
+                    </div>
+                    <div class="radioClass">
+                        <label> Music</label>
+                        <input type="checkbox" name="hobbies" id="hobbies"/>
+                    </div>
+                    <div class="radioClass">
+                        <label> Sports</label>
+                        <input type="checkbox" name="hobbies" id="hobbies" onclick="togglepronoun()"/>
+                    </div>
+                </div>
                 <p class="row1">
                     <select id="select" style="display:none">
                         <option value="NA">&nbsp;Select your pronoun</option>
@@ -283,8 +299,7 @@
                     <input type="email" name="email" id="email" placeholder="email address">
                 </p>
                 <p class="inp4">
-                    <input type="password" name="password" id="password" placeholder="New password">
-                </p>
+                    <input type="password" name="password" id="password" placeholder="New password">                </p>
                 <p class="inp5">
                     <button onclick="func()">Sign Up</button>
                 </p>
