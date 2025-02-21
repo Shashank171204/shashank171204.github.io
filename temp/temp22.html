@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +9,21 @@
 <body>
     <img src="assests/images/ball.png" alt="" width="200px" id="ball">
     <script>
-        ball.style.position="relative"
+        ball.style.position="absolute"
         let b=document.body;
+        let down=0;
+        let right=0;
         let left=0;
-        b.onkeydown=()=>{
-            left=left+5;
-            ball.style.down=left+"px";
+        let up=0;
+        b.onkeydown=(e)=>{
+            if(e.key=="ArrowRight") right+=5;
+            if(e.key=="ArrowDown") down+=5;
+            if(e.key=="ArrowLeft") left+=5;
+            if(e.key=="ArrowUp") up+=5;
+            ball.style.left=right+"px";
+            ball.style.top=down+"px";
+            ball.style.right=left+"px";
+            ball.style.bottom=up+"px";
         };
     </script>
 </body>
