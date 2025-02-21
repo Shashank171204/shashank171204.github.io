@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let users=[]
+        let username=""
+        let useremail=""
+        let currbalance=0
+        function func6(){
+            let amt=document.getElementById("amt").value;
+            let type=document.getElementById("type").value;
+            for(let i=0;i<users.length;i++){
+                if(users[i].email==useremail){
+                    if(type==1){
+                        currbalance+=parseInt(amt);
+                        document.getElementById("balance").innerHTML="Balance: "+currbalance;
+                    }
+                    else if(type==2){
+                        if(parseInt(amt)<=currbalance){
+                            currbalance-=parseInt(amt);
+                            document.getElementById("balance").innerHTML="Balance: "+currbalance;
+                        }
+                        else{
+                            document.getElementById("balance").innerHTML="Insufficient Balance";
+                        }
+                    }
+                    else if(type==3){
+                        let balance=document.getElementById("").value;
+                        document.getElementById("balance").innerHTML="Transfered succesfully";
+                    }
+                }
+            }
+        }
+        function func5(){
+            let str = `
+            <h2>Welcome ${username}!!</h2>
+            <button onclick='func()'>Logout</button>
+            <p><input type="number" placeholder="Enter Amount" id="amt"></p>
+            <p>
+                <select id="type">
+                    <option value=0>--Select--</option>
+                    <option value=1>Deposit</option>
+                    <option value=2>Withdraw</option>
+                    <option value=3>Transfer</option>
+                </select>
+            </p>
+            <p><button onclick="func6()">Submit</button></p>
+            <p id="balance">Balance: ${currbalance}</p>
+            `;
+            root.innerHTML = str;
+        }
+        function func4(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let dob = document.getElementById("dob").value;
+            let user = {
+                name: name,
+                email: email,
+                password: password,
+                dob: dob,
+                balance:0
+            };
+            users.push(user);
+            func();
+        }
+        function func3(){
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == email && users[i].password == password) {
+                    useremail=email
+                    username=users[i].name
+                    currbalance=users[i].balance
+                    func5()
+                }
+                else {
+                    msg.innerHTML = "Access Denied"
+                }
+            }
+        }
+        function func2(){
+            let str = `
+            <h2>Registration Form</h2>
+            <p><input type="text" id="name" placeholder="Name"></p>
+            <p><input type="text" id="email" placeholder="Email"></p>
+            <p><input type="password" id="password" placeholder="Password"></p>
+            <p><input type="date" id="dob"></p>
+            <p><button onclick='func4()'>Submit</button></p>
+            <p>Already a member?<button onclick='func()'>Login Here</button></p>
+            `;
+            root.innerHTML = str;
+        }
+        function func(){
+            let str = `
+            <div>
+                <h2>Login Form</h2>
+                <div id='msg'></div>
+                <p><input id="email" type="text"></p>
+                <p><input id="password" type="password"></p>
+                <button onclick='func3()'>Log In</button>
+                <p><button onclick='func2()'>Create Account</button></p>
+            </div>
+            `;
+            root.innerHTML = str;
+        }
+    </script>
+</head>
+<body onload="func()">
+    <h1>IOB Bank</h1>
+    <hr>
+    <div id="root"></div>
+    <hr>
+    <h3>@Copyright 2025.All rights reserved.</h3>
+</body>
+</html>

@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: block;
+        }
+        .container1{
+            display:grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrapper1{
+            background-color: #fff;
+            border-radius: 0 0 8px 8px;
+            border-top: 1px solid #dadde1;
+            box-sizing: border-box;
+            padding:16px;
+            position: relative;
+            width: 100%;
+            max-width: 432px;
+        }
+        .wrapper{
+            align-items: center;
+            width:432px;
+            border-radius: 8px 8px 8px 8px;
+            background-color: #fff;
+            position: relative;
+            z-index:1;
+            box-shadow: 5px 5px 5px blue;
+        }
+        .box1{
+            font-size: 25px;
+            line-height: 32px;
+            text-align: center;
+            font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+            font-weight:600;
+            margin-top:10px;
+        }
+        .box2{
+            margin-bottom: 0;
+            font-size: 15px;
+            line-height: 24px;
+            color:#606770;
+            font-weight: normal;
+            font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        .text1{
+            margin-bottom: 4px;
+            color:#606770;
+            font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            text-align: left;
+            position: relative;
+            left:5px;
+        }
+        .inp2{
+            position: relative;
+            right:5px;
+        }
+        .inp5 button{
+            font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 126%;
+            letter-spacing: 1px;
+            background-color: blue;
+            border-radius: 6px;
+            color:#fff;
+            height:36px;
+            padding:0 32px;
+            min-width:194px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-color: blue;
+        }
+        .inp5 button:hover{
+            background-color: #fff;
+            color:blue;
+        }
+        .inp6 a{
+            padding: 10px 0;
+            position:relative;
+            color:blue;
+            line-height: 20px;
+            cursor:pointer;
+            text-decoration: none;
+        }
+        #email{
+            padding: 11px;
+            line-height: 16px;
+            width:375px;
+        }
+        #password{
+            padding: 11px;
+            line-height: 16px;
+            width:375px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            gap:15px;
+        }
+        .radioClass {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccd0d5;
+            border-radius: 5px;
+            padding: 5px 10px;
+            width: auto;
+            min-width: 100px;
+        }
+        #day,#month,#year{
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight:normal;
+            height:36px;
+            line-height: 20px;
+            padding: 0 8px;
+            padding-right: 20px;
+            width:125px;
+            border-style: solid;
+            vertical-align: top;
+            border: 1px solid #ccd0d5;
+        }
+        #select{
+            padding:11 8px;
+            padding-right: 20px;
+            border-radius:4px;
+            font-size: 15px;
+            font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+            height:36px;
+            line-height: 20px;
+            margin:4px 0px;
+            border: 1px solid #ccd0d5;
+            width:400px;
+        }
+        input{
+            padding:11px;
+            border-radius: 5px;
+            background-color: transparent;
+            margin: 0;
+            border:1px solid #ccd0d5;
+        }
+        body{
+            background-color:#f0f2f5;
+        }
+    </style>
+    <script>
+        function func(){
+            let name = document.getElementById("first").value;
+            let sname=document.getElementById("surname").value;
+            let day=document.getElementById("day").value;
+            let month=document.getElementById("month").value;
+            let year=document.getElementById("year").value;
+            let gen=document.getElementsByName("gender");
+            let sel=document.getElementById("select").value;
+            let email = document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+            let wrapper = document.querySelector(".wrapper1");
+            let dob=`${day}-${month}-${year}`;
+            let g="";
+            if(gen[0].checked) g="Female";
+            if(gen[1].checked) g="Male";
+            if(gen[2].checked) g=sel;
+            let str = `
+            <div style="text-align:left">
+                <p>Name: ${name}</p>
+                <p>Surname: ${sname}</p>
+                <p>Date of Birth: ${dob}</p>
+                <p>Gender: ${g}</p>
+                <p>E-mail: ${email}</p>
+                <p>Password: ${password}</p>
+            </div>
+            `;
+            wrapper.innerHTML = str;
+        }
+        function togglepronoun(){
+            const p=document.getElementsByName("gender");
+            if (p[2].checked) {
+                select.style.display = "block";
+            } 
+            else {
+                select.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div align="center" class="container">
+        <img src="assests/images/facebook.svg" alt="" width="300"/>
+    </div>
+    <div align="center" class="container1">
+        <div class="wrapper">
+            <div class="box1">
+                Create a new account
+            </div>
+            <div class="box2">
+                It's quick and easy
+            </div>
+            <div class="wrapper1">
+                <p class="inp1">
+                    <input type="text" name="first" id="first" placeholder="First name">
+                    <input type="text" name="surname" id="surname" placeholder="Surname">
+                </p>
+                <p class="text1">Date of Birth</p>
+                <p class="inp2">
+                    <select name="day" id="day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select name="month" id="month">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                    </select>
+                    <select name="year" id="year">
+                        <option value="1">2025</option>
+                        <option value="2">2024</option>
+                        <option value="3">2023</option>
+                        <option value="4">2022</option>
+                    </select>
+                </p>
+                <p class="text1" style="bottom: 4px;">Gender</p>
+                <div class="row">
+                    <div class="radioClass">
+                        <label> Female</label>
+                        <input type="radio" name="gender" id="gender" onclick="togglepronoun()"/>
+                    </div>
+                    <div class="radioClass">
+                        <label> Male</label>
+                        <input type="radio" name="gender" id="gender" onclick="togglepronoun()"/>
+                    </div>
+                    <div class="radioClass">
+                        <label> Custom</label>
+                        <input type="radio" name="gender" id="gender" onclick="togglepronoun()"/>
+                    </div>
+                </div>
+                <p class="row1">
+                    <select id="select" style="display:none">
+                        <option value="NA">&nbsp;Select your pronoun</option>
+                        <option value="She">She:"Wish her a happy birthday"</option>
+                        <option value="He">He:"Wish him a happy birthday"</option>
+                        <option value="They">They:"Wish them a happy birthday"</option>
+                    </select>
+                </p>
+                <p class="inp3">
+                    <input type="email" name="email" id="email" placeholder="email address">
+                </p>
+                <p class="inp4">
+                    <input type="password" name="password" id="password" placeholder="New password">
+                </p>
+                <p class="inp5">
+                    <button onclick="func()">Sign Up</button>
+                </p>
+                <p class="inp6"><a href="#">Already have an account?</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

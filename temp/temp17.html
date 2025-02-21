@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func(){
+            var x = document.getElementById("color").value;
+            var y=document.getElementById('back').value;
+            box.style.color=x;
+            box.style.background=y;
+        }
+    </script>
+</head>
+<body>
+    <p><input type="text" id="color" name="color" placeholder="Enter Color of Text"></p>
+    <p><select name="back" id="back">
+        <option value="white">--Select--</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="lightgreen">Green</option>
+    </select></p>
+    <p><button onclick="func()">Change</button></p>
+    <div id="box">Hello World</div>
+</body>
+</html>

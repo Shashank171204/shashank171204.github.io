@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        let products = []
+
+fetch("assests/json/products.json")
+  .then((response) => response.json()) 
+  .then((data) => (showProducts(data))) 
+  
+
+const cart = {};
+const addToCart = (id) => {
+  if (!cart[id]) cart[id] = 1;
+  showCart();
+};
+const increment = (id) => {
+  cart[id] = cart[id] + 1;
+  showCart();
+};
+const decrement = (id) => {
+  cart[id] = cart[id] - 1;
+  showCart();
+};
+const displayCart = () => {
+  cartBox.style.display = "block";
+  productBox.style.display = "none";
+};
+
+const hideCart = () => {
+  cartBox.style.display = "none";
+  productBox.style.display = "block";
+};
+
+const deleteCart = (id) => {
+  delete cart[id];
+  showCart();
+};
+
+const showTotal = () => {
+  let total = products.reduce((sum, value) => {
+    return sum + value.price * (cart[value.id] ?? 0);
+  }, 0);
+  order.innerHTML = total;
+};
+
+const showCart = () => {
+  let count = Object.keys(cart).length;
+  items.innerHTML = count;
+  showTotal();
+  let str = "";
+  products.map((value) => {
+    if (cart[value.id]) {
+      str += `<div>
+      ${value.id}-${value.name}-${value.price}-
+      <button onclick='decrement(${value.id})'>-</button>
+      ${cart[value.id]}
+      <button onclick='increment(${value.id})'>+</button>
+      -${value.price * cart[value.id]}
+      -<button onclick='deleteCart(${value.id})'>Delete</button>
+      </div>`;
+    }
+  });
+  divCart.innerHTML = str;
+};
+const showProducts = (data) => {
+  products = data
+  let str = "<div class='row'>";
+  products.map((value) => {
+    str += `
+    <div class='box'>
+    <img src='${value.url}'>
+    <h3>${value.name}</h3>
+    <p>${value.desc}</p>
+    <h4>$${value.price}</h4>
+    <button onclick='addToCart(${value.id})'>Add to Cart</button>
+    </div>
+    `;
+  });
+  divProducts.innerHTML = str + "</div>";
+};
+    </script>
+    <style>
+        .header {
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.row {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box {
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+.menu{
+    display: flex;
+}
+.menu div{
+    padding: 10px;
+}
+.row button {
+    background-color: green;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>My Store</h1>
+
+      <div class="menu">
+          <div onclick="hideCart()" >Home</div>&nbsp;&nbsp;
+          <div onclick="displayCart()">Cart:<span id="items"></span></div>
+      </div>
+    </div>
+    <hr />
+    <div id="productBox">
+      <div id="divProducts"></div>
+    </div>
+    <div id="cartBox" style="display: none">
+      <h3>My Cart</h3>
+      <div id="divCart"></div>
+      <h4>Order value:<span id="order"></span></h4>
+    </div>
+    <hr />
+    <h4>@Copyright 2025. All rights reserved.</h4>
+  </body>
+</html>

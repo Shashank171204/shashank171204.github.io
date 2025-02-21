@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=1;
+        console.log("While loop");
+        while(a<10){
+            console.log(a);
+            a=a+1;
+        }
+        console.log("For loop");
+        for(a=1;a<10;a++){
+            console.log(a);
+        }
+        console.log("Fruits array loop");
+        let fruits=['apple','orange','grape'];
+        for(a=0;a<3;a++){
+            console.log(fruits[a]);
+        }
+        console.log("Another method for array loop");
+        fruits.map((value)=>(
+            console.log(value)
+        ))
+    </script>
+</body>
+</html>

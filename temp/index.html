@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document </title>
+    <style>
+        a{
+            text-decoration: none;
+            margin: 5px;
+              color:white;
+            padding: 5px;
+        }
+        iframe {
+            margin:10px;
+            width: 1200px;
+            border:none;
+            height: 600px;
+        }
+        .page {
+          background-color: blue;
+          width:5px;
+          border-radius: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="divTitle"></div>
+      <hr>
+      <div>
+        <iframe name="tempFrm" src="temp1.html"></iframe>
+      </div>
+    </div>
+    <script>
+      str = "<b>Temp File:</b>";
+      for (let i = 1; i <= 30; i++) {
+        str += `<a href="temp${i}.html" target="tempFrm" class="page">${i}</a>`;
+        
+      }
+      divTitle.innerHTML = str
+      console.log(str)
+    </script>
+  </body>
+</html>

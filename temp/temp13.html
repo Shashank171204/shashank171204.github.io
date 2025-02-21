@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let names=['jhon','dake'];
+        // names.push("david");
+        // console.log(names);
+        let names=[];
+        function add(){
+            let name=document.getElementById("usr").value;
+            names.push(name);
+            str="";
+            names.map((value)=>(
+                str=str+value+"<br>"
+            ))
+            data.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <h2>Data Entry Form</h2>
+    <input type="text" name="username" id="usr" placeholder="Enter Username">
+    <button onclick="add()">Add</button>
+    <div id="data"></div>
+</body>
+</html>

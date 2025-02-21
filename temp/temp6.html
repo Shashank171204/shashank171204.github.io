@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+      }
+      .c {
+        background-color: orange;
+      }
+      h3 {
+        background-color: orange;
+      }
+      #h {
+        position: sticky;
+        top: 0px;
+        background-color: orange;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .row {
+        background-color: silver;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .box {
+        /* background-color: teal; */
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        border: 5px solid orange;
+        border-radius: 20px;
+        background: linear-gradient(maroon, silver);
+        box-shadow: 5px 5px 5px 5px grey;
+        transition-property: transform;
+        transition-duration: 0.5s;
+      }
+      .box:hover {
+        transform: scale(1.5, 1.5);
+      }
+
+      .container {
+        position: absolute;
+        scroll-behavior: smooth;
+        overflow: auto;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 100%;
+      }
+      p {
+        font-size: 12px;
+        font-family: "verdana";
+        font-weight: bold;
+      }
+      .header {
+        background-image: url("assests/images/gg.jpg");
+        background-size: cover;
+        justify-content: center;
+        align-items: end;
+      }
+      .caption {
+        background-color: red;
+        padding: 20px;
+        opacity: 0.4;
+        color: white;
+      }
+
+      #h a {
+        text-decoration: none;
+      }
+      /* ul {
+        margin: 0px;
+        padding: 0px;
+      } */
+      li {
+        display: inline-block;
+        padding: 5px;
+        font-size: larger;
+      }
+      .menu {
+        margin: 0px;
+      }
+      .submenu {
+        display: none;
+        position: absolute;
+        background-color: silver;
+      }
+      .menu:hover .submenu {
+        display: block;
+      }
+      .menu:hover {
+        background-color: silver;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="temp">Temp 6</h1>
+      <!-- <h3 style="background-color: orange">My Application</h3> -->
+      <!-- <h3 class="c">My Application</h3> -->
+      <!-- <h3>My Application</h3> -->
+
+      <div id="h">
+        <h3>My Application</h3>
+        <div>
+          <!-- <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a> -->
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="menu">
+              <a href="#projects">Projects</a>
+              <div class="submenu">
+                <a href="#">Project 1</a><br />
+                <a href="#">Project 2</a><br />
+              </div>
+            </li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row header" id="home">
+        <div class="caption">
+          <h1>Full Stack Developer</h1>
+          <p>MERN | MERN | Java | Python</p>
+        </div>
+      </div>
+      <div class="row" id="projects">
+        <div class="box">
+          <h2>Project 1</h2>
+          <p>This is my project 1</p>
+          <a href="#">View Project</a>
+        </div>
+        <div class="box">
+          <h2>Project 2</h2>
+          <p>This is my project 2</p>
+          <a href="#">View Project</a>
+        </div>
+        <div class="box">
+          <h2>Project 3</h2>
+          <p>This is my project 3</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+      <div>
+        <h3>@Copyright 2024. All rights reserved.</h3>
+      </div>
+    </div>
+  </body>
+</html>

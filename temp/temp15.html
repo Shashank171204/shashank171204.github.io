@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let i=0;
+        function add(){
+            btn.innerHTML=i++;
+        }
+        function sub(){
+            if(i>0){
+                i=i-1;
+            }
+            btn.innerHTML=i;
+        }
+    </script>
+</head>
+<body>
+    <h2>Increase Decrease the Number</h2>
+    <button onclick="add()">+</button>
+    <span id="btn"></span>
+    <button onclick="sub()">-</button>
+</body>
+</html>

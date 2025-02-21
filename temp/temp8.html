@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showdata(){
+            // alert('Hello World');
+            let users=[];
+            var name=document.getElementById("firstname").value;
+            var name1=document.getElementById("lastname").value;
+            var name2=document.getElementById("password").value;
+            var name3=document.getElementById("dateofbirth").value;
+            if(name=="shashank" && name1=="thotawar"){
+                document.getElementById("box1").innerHTML="Welcome, User shashank"
+            }
+            else{
+                document.getElementById("box1").innerHTML="Invalid User";
+            }
+            let user={
+                name:name,
+                last:name1,
+                password:name2,
+                dob:name3
+            }
+            users.push(user);
+            console.log(users);
+            let str="";
+            for(let i=0;i<users.length;i++){
+                str+=users[i].name+" "+users[i].last+" "+users[i].password+" "+users[i].dob+" ";
+            }
+            box1.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <h1>Facebook Registration Form</h1>
+    <p><input type="text" name="first" id="firstname"></p>
+    <p><input type="text" name="last" id="lastname"></p>
+    <p><input type="password" name="pwd" id="password"></p>
+    <p><input type="datetime-local" name="dob" id="dateofbirth"></p>
+    <button onclick="showdata()">Register</button>
+    <hr>
+    <div id="box1"></div>
+</body>
+</html>
