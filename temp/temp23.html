@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Score:<span id="score"></h1>
+    <hr>
+    <img src="assests/images/food.jpg" alt="" width="100px" id="ball">
+    <img src="assests/images/bucket.png" alt="" width="100px" id="bucket">
+    <script>
+        bucket.style.position = "absolute";
+        ball.style.position = "absolute";
+        let b = document.body;
+        let left = 0;
+        let down = 400;
+        bucket.style.left = left + "px";
+        bucket.style.top = down + "px";
+        b.onkeydown = (e) => {
+            if (e.key == "ArrowRight") left += 5;
+            if (e.key == "ArrowDown") down += 5;
+            if (e.key == "ArrowLeft") left -= 5;
+            if (e.key == "ArrowUp") down -= 5;
+            bucket.style.left = left + "px";
+            bucket.style.top = down + "px";
+        };
+        let t = 0;
+        let l = 0;
+        let sc=0;
+        function ballFall() {
+            t++;
+            if (t > 400) {
+                t = 1;
+                l= Math.random() * 500;
+            }
+            ball.style.top = t + "px";
+            ball.style.left = l + "px";
+            setTimeout(ballFall, 10);
+        }
+        ballFall();
+    </script>
+</body>
+</html>
