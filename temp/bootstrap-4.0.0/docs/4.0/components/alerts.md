@@ -15,7 +15,7 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 <div class="alert alert-{{ color.name }}" role="alert">
   This is a {{ color.name }} alert—check it out!
 </div>{% endfor %}
-{% endexample %}
+
 
 {% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
 {{ callout-include | markdownify }}
