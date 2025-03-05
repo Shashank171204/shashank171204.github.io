@@ -5,8 +5,7 @@ function showLogin() {
     .then((data) => displayUsers(data))
     .catch((err) => console.log(err));
 }
-
-function showPosts(id) {
+function showMyPost(id){
   let str = "<h3>My Post</h3>";
   fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
     .then((res) => res.json())
@@ -14,6 +13,25 @@ function showPosts(id) {
       data &&
         data.map((value) => {
           str += `<div>
+        <b>UserId:${value.userId}</b>
+        <b>${value.title}</b>
+        <p>${value.body}</p>
+        </div>`;
+        });
+      content.innerHTML = str;
+    })
+    .catch((err) => console.log(err));
+}
+function showPosts(id) {
+  let str = "<h3>Home</h3>";
+  //fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
+  fetch(`https://jsonplaceholder.typicode.com/posts/`)
+    .then((res) => res.json())
+    .then((data) => {
+      data &&
+        data.map((value) => {
+          str += `<div>
+        <b>UserId:${value.userId}</b>
         <b>${value.title}</b>
         <p>${value.body}</p>
         </div>`;
@@ -77,9 +95,9 @@ function showHome() {
      </div>
      <div class='row'>
       <div class='d-flex'>
-       <div class='p-2'>
+       <div class='p-2 me-5'>
          <p onclick='showPosts(${userId})'>Home</p>
-         <p onclick='showMyPosts(${userId})'>My Posts</p>
+          <p onclick='showMyPost(${userId})'>My Post</p>
          <p onclick='showAlbum(${userId})'>Album</p>
           <p onclick='showTodos(${userId})'>Todos</p>
           <p onclick='showProfile(${userId})'>Profile</p>
