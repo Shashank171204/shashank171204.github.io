@@ -14,7 +14,7 @@
         {
             let str="";
             data.map(value=>{
-                str+=`<li>${value.name}</li>`
+                str+=`<li>${value.name}&nbsp;|&nbsp;${value.email}</li>`
             });
             root.innerHTML=str;
         });
