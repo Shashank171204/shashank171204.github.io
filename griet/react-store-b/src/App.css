@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.container{
+  width:20%;
+  height:40%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  animation-name: bgchange;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  border:solid 5px transparent;
+  border-radius: 10px;
+  border-color:white;
+  box-shadow: 1px 2px 5px black;
+}
+@keyframes bgchange {
+  0%{
+    background-color: red;
+  }
+  15%{
+    background-color: yellow;
+  }
+  30%{
+    background-color: green;
+    color:white;
+  }
+  45%{
+    background-color: blue;
+    color: white;
+  }
+  60%{
+    background-color: purple;
+    color:white;
+  }
+  75%{
+    background-color: gray;
+  }
+  90%{
+    background-color: red;
+  }
+  100%{
+    background-color: red;
+  }
+}
+.button{
+  cursor:pointer;
+}
+.box{
+  background-color: #282c34;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:30%;
+}
