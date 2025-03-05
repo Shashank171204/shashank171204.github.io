@@ -1,6 +1,7 @@
-export default function greet(){
+function greet(){
     return "Hello World"
 }
-export function add(a,b){
+function add(a,b){
     return a+b
 }
+export {greet,add}
