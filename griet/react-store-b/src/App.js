@@ -1,16 +1,15 @@
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
 function App() {
   return (
-    <div class="container">
-      <div align="center" class="row">
-        <h2>Login Form</h2>
-        <p><input type="text" name="user" id="user" placeholder="Enter Usename"></input></p>
-        <p><input type="password" name="pwd" id="pwd" placeholder="Enter Password"></input></p>
-        <p><button>Log In</button></p>
-      </div>
+    <div>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
-
 export default App;
