@@ -1,0 +1,28 @@
+.container{
+    background: #e2e3e5;
+    color:#000;
+    display: flex;
+    height:130px;
+    align-items: center;
+    justify-content: center;
+}
+.row h1{
+    padding: 0px;
+    text-align: center;
+    cursor:pointer;
+}
+.border{
+    border-bottom:2px solid #000;
+    margin-bottom: 100px;
+    width:50px;
+    margin-left: 88px;
+}
+.row div{
+    text-align: center;
+    font-weight: bold;
+    cursor:pointer;
+    margin-bottom: 4px;
+} 
+.black{
+    color:blue;
+}
