@@ -1,7 +1,8 @@
+import "./Footer.css";
 export default function Footer() {
   return (
     <div>
-        <h1>Footer</h1>
+        <h6>@Copyright 2025.All rights reserved.</h6>
     </div>
   )
 }

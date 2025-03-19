@@ -1,0 +1,12 @@
+.Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Container p{
+    text-align: center;
+    font-weight: bold;
+}
+.Container h1{
+    text-align: center;
+}

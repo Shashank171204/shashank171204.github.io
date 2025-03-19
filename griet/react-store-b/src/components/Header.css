@@ -12,10 +12,10 @@
     cursor:pointer;
 }
 .border{
-    border-bottom:2px solid #000;
+    border-bottom:2px solid rgb(0,0,255);
     margin-bottom: 100px;
     width:50px;
-    margin-left: 88px;
+    margin-left: 342px;
 }
 .row div{
     text-align: center;
@@ -25,4 +25,22 @@
 } 
 .black{
     color:blue;
+}
+.home{
+    text-decoration: none;
+    margin-left:100px;
+}
+.cart{
+    text-decoration: none;
+    margin-left:210px;
+}
+.border1{
+    border-bottom:2px solid #000;
+    margin-top: 10px;
+    width:700px;
+    margin-left: 50px;
+}
+.login{
+    text-decoration: none;
+    margin-left:300px;
 }
