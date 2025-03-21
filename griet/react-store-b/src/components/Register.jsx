@@ -1,18 +1,55 @@
-import React from 'react'
-import { Link } from "react-router-dom"
-
+import React from "react";
+import { useState } from "react";
+import "./Register.css"
+import { Link } from "react-router-dom";
 export default function Register() {
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
+  const handleSubmit = () => {
+    setUsers([...users, user]);
+  };
+  const handleDelete=(value)=>{
+    setUsers(users.filter((element)=>element != value));
+  }
   return (
-    <div>
+    <div className="App-Register-Row">
       <div>
-        <h1>Registration Form</h1>
-        <p><input type="text" name="first" id="firstname"/></p>
-        <p><input type="text" name="last" id="lastname"/></p>
-        <p><input type="password" name="pwd" id="password"/></p>
-        <p><input type="datetime-local" name="dob" id="dateofbirth"/></p>
-        <button>Register</button>
-        <p>Already Registered click<Link to="../login">here!!</Link></p>
+        <h2>Registration Form</h2>
+        <p>
+          <input
+            type="text"
+            placeholder="Enter name"
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
+          ></input>
+        </p>
+        <p>
+          <input
+            type="text"
+            placeholder="Email address"
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+          ></input>
+        </p>
+        <p>
+          <input
+            type="password"
+            placeholder="New password"
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
+          ></input>
+        </p>
+        <p>
+          <button onClick={handleSubmit}>Submit</button>
+        </p>
+        <p>
+          <Link to="../login">Already a member? Log In</Link>
+        </p>
+      </div>
+      <div>
+        {
+          users && users.map((value,index)=>(
+            <li>{value.name}-{value.email}-{value.password} <button onClick={(e)=>{handleDelete(value)}}>Delete</button></li>
+          ))
+        }
       </div>
     </div>
-  )
+  );
 }
