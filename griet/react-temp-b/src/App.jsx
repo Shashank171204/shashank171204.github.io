@@ -7,6 +7,12 @@ import App4 from "./components/App4";
 import App5 from "./components/App5";
 import App6 from "./components/App6";
 import App7 from "./components/App7";
+import App8 from "./components/App8";
+import App9 from "./components/App9";
+import App10 from "./components/App10";
+import App11 from "./components/App11";
+import App12 from "./components/App12";
+import App13 from "./components/App13";
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +25,12 @@ function App() {
           <Link to="app5" className="box">App5</Link>
           <Link to="app6" className="box">App6</Link>
           <Link to="app7" className="box">App7</Link>
+          <Link to="app8" className="box">App8</Link> 
+          <Link to="app9" className="box">App9</Link>
+          <Link to="app10" className="box">App10</Link>
+          <Link to="app11" className="box">App11</Link>
+          <Link to="app12" className="box">App12</Link>
+          <Link to="app13" className="box">App13</Link>    
         </div>
         <hr></hr>
         <div>
@@ -31,6 +43,12 @@ function App() {
             <Route path="app5" element={<App5 />} />
             <Route path="app6" element={<App6 />} />
             <Route path="app7" element={<App7 />} />
+            <Route path="app8" element={<App8 />} />
+            <Route path="app9" element={<App9 />} />
+            <Route path="app10" element={<App10 />} />
+            <Route path="app11" element={<App11 />} />
+            <Route path="app12" element={<App12 />} />
+            <Route path="app13" element={<App13 />} />
           </Routes>
         </div>
       </div>

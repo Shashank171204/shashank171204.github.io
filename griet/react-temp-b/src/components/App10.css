@@ -1,0 +1,18 @@
+.App-App10-Container {
+    background-color: pink;
+}
+
+.App-App10-Row {
+    display: flex;
+    justify-content: center;
+}
+
+.App-App10-Box {
+    width: 400px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    transition: transform 1s;
+}
