@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { appContext } from "../App";
 export default function Register() {
   const { user, setUser, users, setUsers } = useContext(appContext);
   const [msg, setMsg] = useState();
+  const Navigate = useNavigate();
   const handleSubmit = () => {
     const found = users.find((value) => value.email === user.email);
     if (found) {
@@ -14,6 +15,7 @@ export default function Register() {
     } else {
       setUsers([...users, user]);
       setMsg();
+      Navigate("/");
     }
   };
   const handleDelete = (email) => {

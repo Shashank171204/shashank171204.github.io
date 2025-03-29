@@ -1,5 +1,8 @@
 import './Main.css'
+import { appContext } from "../App";
+import { useContext } from "react";
 export default function Main() {
+  const { user } = useContext(appContext);
   const products = [
     {
       id: 1,
@@ -40,6 +43,9 @@ export default function Main() {
   ]
   return (
     <div class="app">
+      <div>
+      <h3>{user.name}</h3>
+      </div>
       {products.map((value,index)=>(
         <div class="row-app" key={index}>
           <p>{value.id}.</p>
