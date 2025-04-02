@@ -12,6 +12,7 @@ export default function Login() {
       (value) => value.email === user.email && value.password === user.password
     );
     if (found) {
+      user.name=found.name;
       Navigate("/");
     } else {
       setMsg("Invalid Credentials");
