@@ -1,10 +1,9 @@
-import React from 'react'
-export default function App1(pros) {
+import React from "react";
+
+export default function App1() {
   return (
     <div>
-      <p>Hi, i am {pros.name}</p>
-      <p>My Age is {pros.age}</p>
-      <hr />
+      <h1>App1</h1>
     </div>
-  )
+  );
 }

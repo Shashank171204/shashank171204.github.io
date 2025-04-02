@@ -29,7 +29,6 @@ export default function App4() {
         ></input>
       </p>
       <button onClick={handleSubmit}>Log In</button>
-      <hr />
     </div>
   );
 }

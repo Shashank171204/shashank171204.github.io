@@ -6,6 +6,12 @@ export default function Main() {
   const addToCart = (value) => {
     setCart({ ...cart, [value]: 1 })
   }
+  const increment = (id) => {
+    setCart({ ...cart, [id]: cart[id] + 1 });
+  };
+  const decrement = (id) => {
+    setCart({ ...cart, [id]: cart[id] - 1 });
+  };
   return (
     <div>
       <h3>{user.name}</h3>
@@ -15,7 +21,12 @@ export default function Main() {
             <p><img src={value.url} alt="error" /></p>
             <p><span>Product Name: </span>{value.name}</p>
             <p><span>Price: </span>${value.price}</p>
-            <p><button class="btn" onClick={() => addToCart(value.id)}>Add to Cart</button></p>
+            {cart[value.id] > 0 ? (
+                <p><button onClick={()=>decrement(value.id)}>-</button>
+                {cart[value.id]}
+                <button onClick={()=>increment(value.id)}>+</button></p>
+            ):( <p><button class="btn" onClick={() => addToCart(value.id)}>Add to Cart</button></p>
+            )}
           </div>
         ))}
       </div>

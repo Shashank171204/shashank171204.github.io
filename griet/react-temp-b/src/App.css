@@ -40,9 +40,13 @@
 .read-the-docs {
   color: #888;
 } */
-
-
 .box{
   margin: 5px;
 
+}
+
+.App-Row {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: start;
 }

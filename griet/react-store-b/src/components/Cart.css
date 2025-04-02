@@ -1,0 +1,13 @@
+.place_order{
+    border-radius: 5px;
+    border:1px solid rgb(0,0,255);
+    background-color:rgb(0,0,255);
+    color:#fff;
+    cursor:pointer;
+    line-height: 40px;
+    width:200px;
+}
+.place_order:hover{
+    background-color: #fff;
+    color:rgb(0,0,255);
+}

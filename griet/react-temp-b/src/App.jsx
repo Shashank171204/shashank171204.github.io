@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes,Link } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import App1 from "./components/App1";
 import App2 from "./components/App2";
 import App3 from "./components/App3";
@@ -13,24 +14,64 @@ import App10 from "./components/App10";
 import App11 from "./components/App11";
 import App12 from "./components/App12";
 import App13 from "./components/App13";
+import App14 from "./components/App14";
+import App15 from "./components/App15";
+import App16 from "./components/App16";
 function App() {
+
   return (
     <BrowserRouter>
       <div>
-        <div>
-          <Link to="app1" className="box">App1</Link>
-          <Link to="app2" className="box">App2</Link>
-          <Link to="app3" className="box">App3</Link>
-          <Link to="app4" className="box">App4</Link>
-          <Link to="app5" className="box">App5</Link>
-          <Link to="app6" className="box">App6</Link>
-          <Link to="app7" className="box">App7</Link>
-          <Link to="app8" className="box">App8</Link> 
-          <Link to="app9" className="box">App9</Link>
-          <Link to="app10" className="box">App10</Link>
-          <Link to="app11" className="box">App11</Link>
-          <Link to="app12" className="box">App12</Link>
-          <Link to="app13" className="box">App13</Link>    
+          <div className="App-Row">
+          <Link to="app1" className="box">
+            App1
+          </Link>
+          <Link to="app2" className="box">
+            App2
+          </Link>
+          <Link to="app3" className="box">
+            App3
+          </Link>
+          <Link to="app4" className="box">
+            App4
+          </Link>
+          <Link to="app5" className="box">
+            App5
+          </Link>
+          <Link to="app6" className="box">
+            App6
+          </Link>
+          <Link to="app7" className="box">
+            App7
+          </Link>
+          <Link to="app8" className="box">
+            App8
+          </Link>
+          <Link to="app9" className="box">
+            App9
+          </Link>
+          <Link to="app10" className="box">
+            App10
+          </Link>
+          <Link to="app11" className="box">
+            App11
+          </Link>
+          <Link to="app12" className="box">
+            App12
+          </Link>
+          <Link to="app13" className="box">
+            App13
+          </Link>
+          <Link to="app14" className="box">
+            App14
+          </Link>
+          <Link to="app15" className="box">
+            App15
+          </Link>
+          <Link to="app16" className="box">
+            App16
+          </Link>
+          
         </div>
         <hr></hr>
         <div>
@@ -49,6 +90,9 @@ function App() {
             <Route path="app11" element={<App11 />} />
             <Route path="app12" element={<App12 />} />
             <Route path="app13" element={<App13 />} />
+            <Route path="app14" element={<App14 />} />
+            <Route path="app15" element={<App15 />} />
+            <Route path="app16" element={<App16 />} />
           </Routes>
         </div>
       </div>

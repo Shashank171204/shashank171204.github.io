@@ -1,21 +1,17 @@
-import React, { useState } from 'react'
-import './App5.css'
-
+import React from "react";
+import { useState } from "react";
+import "./App5.css";
 export default function App5() {
-  const [count, SubCount] = useState(0)
-  const increment = () => {
-    SubCount(count + 1)
+  const [count, setCount] = useState(0);
+  const handleSubmit = () => {
+    setCount(count+1)
   }
   return (
-    <div class="Container">
+    <div className="container">
       <div>
-        <h1>Count</h1>
-        <p>{count}</p>
-        <p>
-          <button onClick={increment}>Click Me</button>
-        </p>
+        <div>{count}</div>
+        <button onClick={handleSubmit}>Click</button>
       </div>
-      <hr />
     </div>
-  )
+  );
 }

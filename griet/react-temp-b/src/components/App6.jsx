@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
-
+import React from "react";
+import { useState } from "react";
 export default function App6() {
-    const [string,setString]=useState()
-    const[arr,setArray]=useState([])
-    const add=()=>{
-        setArray([...arr,string])
-    }
-    return (
-        <div class="Container">
-            <div>
-                <h1>Data Adder</h1>
-                <p><input type="text" placeholder="Enter the Hobbies"onChange={(event)=>setString(event.target.value)}/>&nbsp;&nbsp;<button onClick={add}>Add</button></p>
-                <hr />
-                {arr && arr.map((value,index)=><li key={index}>{value}</li>)}
-            </div>
-            <hr />
-        </div>
-    )
+  const [hobby, setHobby] = useState([]);
+  const [text, setText] = useState();
+  const handleSubmit = () => {
+    setHobby([...hobby, text]);
+  };
+  const handleDelete = (value) => {
+    setHobby(hobby.filter((element) => element != value));
+  };
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter your hobby"
+        onChange={(event) => setText(event.target.value)}
+      ></input>
+      <button onClick={handleSubmit}>Add</button>
+      <hr></hr>
+      {hobby &&
+        hobby.map((value, index) => (
+          <li key={index}>
+            {value}
+            <button onClick={() => handleDelete(value)}>Delete</button>
+          </li>
+        ))}
+    </div>
+  );
 }

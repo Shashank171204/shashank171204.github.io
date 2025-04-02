@@ -7,9 +7,9 @@ export default function App7() {
     setProducts([...products, product]);
   };
   return (
-    <div className="container">
+    <div className="App-Row">
       <div>
-        <h3 style={{ textAlign: "center"}}>Billing Form</h3>
+        <h3>Billing Form</h3>
         <p>
           <input
             type="text"
@@ -37,15 +37,9 @@ export default function App7() {
           <button onClick={handleSubmit}>Submit</button>
         </p>
       </div>
-      <div class="wrapper">
+      <div>
         <h4>Items</h4>
-        <table border="1" >
-          <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>quantity</td>
-            <td>Amount</td>
-          </tr>
+        <table border="1">
           {products &&
             products.map((value, index) => (
               <tr>

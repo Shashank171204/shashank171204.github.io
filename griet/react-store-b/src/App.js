@@ -4,6 +4,7 @@ import Cart from "./components/Cart";
 import Main from "./components/Main";
 import Log from "./components/Log";
 import Register from "./components/Register";
+import Orders from "./components/Orders";
 import { createContext } from "react";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,6 +13,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [cart,setCart]=useState({});
+  const [orders,setOrders] = useState([]);
   const products = [
     {
       id: 1,
@@ -52,13 +54,14 @@ function App() {
   ]
   return (
     <BrowserRouter>
-    <appContext.Provider value={{ users, setUsers, user, setUser ,cart ,setCart ,products}}>
+    <appContext.Provider value={{ users, setUsers, user, setUser ,cart ,setCart ,products ,orders ,setOrders}}>
       <Header />
       <Routes>
         <Route index element={<Main />} />
         <Route path="home" element={<Main />} />
         <Route path="cart" element={<Cart />} />
         <Route path="login" element={<Log />}/>
+        <Route path="order" element={<Orders />}/>
         <Route path="register" element={<Register />}/>
       </Routes>
       <Footer />

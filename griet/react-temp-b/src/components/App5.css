@@ -1,12 +1,9 @@
-.Container{
+.container{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
-.Container p{
-    text-align: center;
-    font-weight: bold;
-}
-.Container h1{
-    text-align: center;
+
+.container div {
+    font-size: 40px;
 }
