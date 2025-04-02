@@ -17,37 +17,37 @@ function App() {
       id: 1,
       name: 'Product1',
       price: 40,
-      url:"https://picsum.photos/id/1/200/300"
+      url:"https://picsum.photos/id/1/400/300"
     },
     {
       id: 2,
       name: 'Product2',
       price: 30,
-      url:"https://picsum.photos/id/2/200/300"
+      url:"https://picsum.photos/id/2/400/300"
     },
     {
       id: 3,
       name: 'Product3',
       price: 20,
-      url:"https://picsum.photos/id/3/200/300"
+      url:"https://picsum.photos/id/3/400/300"
     },
     {
       id: 4,
       name: 'Product4',
       price: 40,
-      url:"https://picsum.photos/id/4/200/300"
+      url:"https://picsum.photos/id/4/400/300"
     },
     {
       id: 5,
       name: 'Product5',
       price: 40.5,
-      url:"https://picsum.photos/id/5/200/300"
+      url:"https://picsum.photos/id/5/400/300"
     },
     {
       id: 6,
       name: 'Product6',
       price: 50,
-      url:"https://picsum.photos/id/6/200/300"
+      url:"https://picsum.photos/id/6/400/300"
     }
   ]
   return (

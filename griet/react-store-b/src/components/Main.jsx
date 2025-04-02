@@ -12,9 +12,9 @@ export default function Main() {
       <div class="app">
         {products.map((value, index) => (
           <div class="row-app" key={index}>
-            <p>{value.id}.</p>
-            <p>{value.name}</p>
-            <p>{value.price}</p>
+            <p><img src={value.url} alt="error" /></p>
+            <p><span>Product Name: </span>{value.name}</p>
+            <p><span>Price: </span>${value.price}</p>
             <p><button class="btn" onClick={() => addToCart(value.id)}>Add to Cart</button></p>
           </div>
         ))}
