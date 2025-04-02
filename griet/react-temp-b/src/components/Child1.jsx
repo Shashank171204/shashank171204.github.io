@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Child1() {
+export default function Child1(props) {
   return (
-    <div>Child1</div>
+    <div>{props.num}</div>
   )
 }
