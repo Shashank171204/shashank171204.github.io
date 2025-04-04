@@ -61,7 +61,7 @@ export default function Cart() {
             {user.email ? (
               <button onClick={placeOrder} class="place_order">Place Order</button>
             ) : (
-              <button class="place_order">Login to Order</button>
+              <button class="place_order" onClick={()=>Navigate("/login")}>Login to Order</button>
             )}
           </p>
         </>

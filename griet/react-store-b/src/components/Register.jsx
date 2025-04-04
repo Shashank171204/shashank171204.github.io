@@ -2,22 +2,20 @@ import React from "react";
 import { useState } from "react";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext,useRef } from "react";
+import { useContext } from "react";
 import { appContext } from "../App";
 export default function Register() {
-  const { user, setUser, users, setUsers } = useContext(appContext);
+  const { user, setUser, users, setUsers,cart } = useContext(appContext);
   const [msg, setMsg] = useState();
-  const msgref=useRef();
   const Navigate = useNavigate();
   const handleSubmit = () => {
     const found = users.find((value) => value.email === user.email);
     if (found) {
       setMsg("User already exists");
-      msgref.current.style.color="red"
     } else {
       setUsers([...users, user]);
       setMsg();
-      Navigate("/");
+      Object.keys(cart).length > 0 ? Navigate("/cart") : Navigate("/");
     }
   };
   const handleDelete = (email) => {

@@ -5,15 +5,14 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
   const Navigate = useNavigate();
-  const { user, setUser, users} = useContext(appContext);
+  const { user, setUser, users,cart} = useContext(appContext);
   const [msg, setMsg] = useState();
   const handleSubmit = () => {
     const found = users.find(
       (value) => value.email === user.email && value.password === user.password
     );
     if (found) {
-      user.name=found.name;
-      Navigate("/");
+      Object.keys(cart).length > 0 ? Navigate("/cart") : Navigate("/");
     } else {
       setMsg("Invalid Credentials");
     }
