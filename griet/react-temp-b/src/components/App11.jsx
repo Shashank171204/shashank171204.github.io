@@ -8,6 +8,10 @@ export default function App11() {
   };
   return (
     <div>
+      <p>
+        <span style={{fontWeight: "bolder"}}>Concept:</span>
+        We learned about useRef component,and on how to link a variable msgRef to change and modify elements by using an attribute ref.
+      </p>
       <h3>This is App11</h3>
       <p>
         <input type="text" onChange={(e)=>setColor(e.target.value)}></input>
