@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showCookies()">Show Cookies</button>
+    <button onclick="createCookies()">Create Cookies</button>
+    <button onclick="deleteCookies()">Delete Cookies</button>
+    <div id="divCookie"></div>
+    <script>
+      function createCookies() {
+        document.cookie = "name=John;expires=Thu, 18 Oct 2025 12:00:00 UTC";
+        document.cookie =
+          "email=john@email.com;expires=Thu, 18 Oct 2025 12:00:00 UTC";
+        document.cookie = "pass=1234;expires=Thu, 18 Oct 2025 12:00:00 UTC";
+      }
+
+      function showCookies() {
+        divCookie.innerHTML = document.cookie;
+      }
+
+      function deleteCookies() {
+        document.cookie = "name=John;expires=Thu, 18 Oct 2022 12:00:00 UTC";
+        document.cookie =
+          "email=john@email.com;expires=Thu, 18 Oct 2022 12:00:00 UTC";
+        document.cookie = "pass=1234;expires=Thu, 18 Oct 2022 12:00:00 UTC";
+      }
+    </script>
+  </body>
+</html>
