@@ -1,7 +1,7 @@
 {
   "name": "react-store-b",
   "version": "0.1.0",
-  "homepage":"https://shashank171204.github.io/griet/react-store-b",
+  "homepage":"https://shashank171204.github.io/react-store-b-build",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
